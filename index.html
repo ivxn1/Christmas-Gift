@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obicham Te Bebe</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('img.png'); /* Background image */
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2rem;
+            color: #ff69b4;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            animation: text-animation 5s linear infinite;
+            margin: 0 1rem -50px; /* Reduced margin to bring text closer to the video */
+        }
+        video {
+            border: 3px solid #ff69b4;
+            border-radius: 10px;
+            width: 20%; /* Adjust the video width to be larger */
+            height: auto; /* Maintain aspect ratio */
+            transform: rotate(270deg); /* Flip the video so it displays correctly */
+        }
+        button {
+            margin-top: 15px; /* Space between the video and button */
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #ff69b4;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        button:hover {
+            background-color: #ff85c2;
+        }
+        @keyframes text-animation {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>ПОЖЕЛАВАМ ТИ МНОГО КРАСИВИ ТВОРЕНИЯ ЗА НАПРЕД! ОТВОРИ СИ ПОДАРЪКА...</h1>
+
+    <!-- Video element -->
+    <video id="myVideo" controls>
+        <source src="ivan_santa.mp4" type="video/mp4">
+        Вашият браузър не поддържа видео елемента.
+    </video>
+
+    <!-- Button to start the audio -->
+    <button onclick="startAudio()">Play Sound</button>
+
+    <!-- Audio element for background sound -->
+    <audio id="myAudio" loop>
+        <source src="santa.mp3" type="audio/mp3">
+        Вашият браузър не поддържа аудио елемента.
+    </audio>
+
+    <script>
+        function startAudio() {
+            const audio = document.getElementById('myAudio');
+            audio.play();
+        }
+    </script>
+</body>
+</html>
